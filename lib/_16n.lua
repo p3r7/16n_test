@@ -1,4 +1,6 @@
 
+local inspect = include("lib/inspect")
+
 local _16n = {}
 
 
@@ -124,6 +126,7 @@ _16n.init = function(cc_cb_fn)
             if slider_id == 16 then
               is_init_cc_dump_on = false
               print("done retrieving 16n config")
+              print(inspect(conf_16n))
             end
           else
             if cc_cb_fn ~= nil then
@@ -182,11 +185,6 @@ end
 _16n.init_vals = function(slider_id)
   mustHaveConf()
   return conf_16n.init_values
-end
-
-_16n.conf = function()
-  mustHaveConf()
-  return conf_16n
 end
 
 
